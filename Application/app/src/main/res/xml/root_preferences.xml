@@ -1,0 +1,41 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory app:title="General Settings">
+
+        <SwitchPreferenceCompat
+            app:key="dark_mode"
+            app:title="Forced dark mode"
+            app:defaultValue="false"
+            app:summaryOn="Dark mode enabled"
+            android:summaryOff="Follow the system"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Map Settings">
+
+        <ListPreference
+            app:key="map_style"
+            app:title="Map style"
+            app:summary="Change map's color theme"
+            app:defaultValue="0"
+            app:entries="@array/map_style_entries"
+            app:entryValues="@array/map_style_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Reset">
+
+        <Preference
+            app:key="reset_favorites"
+            app:summary="Clear all favorite locations."
+            app:title="Reset favorite" />
+
+        <Preference
+            app:key="reset_locations"
+            app:summary="Delete all added locations."
+            app:title="Reset locations" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
+
+

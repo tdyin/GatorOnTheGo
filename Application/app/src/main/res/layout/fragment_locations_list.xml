@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="location"
+            type="edu.sfsu.csc680.gatoronthego.model.Location" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/locations_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LocationsFragment">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/sw_locations"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/border_filled_secondary"
+            android:textCursorDrawable="@null"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null" />
+
+        <TextView
+            android:id="@+id/reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/add_fav_reminder"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_locations"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/fragment_locations_item" />
+
+    </LinearLayout>
+</layout>

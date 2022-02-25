@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/map_nav">
+
+    <fragment
+        android:id="@+id/map_nav"
+        android:name="edu.sfsu.csc680.gatoronthego.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <argument
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument android:name="lng"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="''" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/info_nav"
+        android:name="edu.sfsu.csc680.gatoronthego.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/locations_nav"
+        android:name="edu.sfsu.csc680.gatoronthego.LocationsFragment"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations_list" >
+        <action
+            android:id="@+id/action_locations_to_map"
+            app:destination="@id/map_nav" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings_nav"
+        android:name="edu.sfsu.csc680.gatoronthego.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <fragment
+        android:id="@+id/favorites_nav"
+        android:name="edu.sfsu.csc680.gatoronthego.FavoritesFragment"
+        android:label="fragment_favorite_list"
+        tools:layout="@layout/fragment_locations_list" >
+        <action
+            android:id="@+id/action_favorites_to_map"
+            app:destination="@id/map_nav" />
+    </fragment>
+    <argument
+        android:name="lat" />
+    <argument
+        android:name="lng" />
+    <argument
+        android:name="name" />
+
+</navigation>
